@@ -9,6 +9,7 @@ import UIKit
 
 class ViewController: UIViewController, DidSelectBurgerDelegate {
     @IBOutlet weak var myTableView: UITableView!
+    @IBOutlet weak var gesamtbetrag: UILabel!
     var bestellungen = [Bestellung]()
     
     override func viewDidLoad() {
@@ -53,31 +54,38 @@ class ViewController: UIViewController, DidSelectBurgerDelegate {
         }
         
         self.myTableView.reloadData()
+        
+        updateGesamtBetrag()
+    }
+    
+    func updateGesamtBetrag() {
+        var gesamt: Float = 0
+        
+        bestellungen.forEach({ (element: Bestellung) -> Void in
+            gesamt += element.burger.price * Float(element.anzahl)
+        })
+        
+        gesamtbetrag.text = String(format: "%.2f", gesamt) + "€"
     }
 }
 
 extension ViewController : UITableViewDelegate {
     func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
         
-        
         let selectedBestellung = bestellungen[sourceIndexPath.row]
         
-     
         bestellungen.remove(at: sourceIndexPath.row)
-        
         
         bestellungen.insert(selectedBestellung, at: destinationIndexPath.row)
     }
     
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        
         if editingStyle == .delete {
-            
             bestellungen.remove(at: indexPath.row)
             
-            
             myTableView.deleteRows(at: [indexPath], with: .automatic)
+            updateGesamtBetrag()
         }
     }
 }
