@@ -1,0 +1,60 @@
+[{
+"name" :  "Hamburger",
+"price" : 3,
+"imageName" : "hamburger"
+},
+{
+"name" :  "Hamhamhm",
+"price" : 0.5,
+"imageName" : "hamhamham"
+},
+{
+"name" :  "Burburbur",
+"price" : 6,
+"imageName" : "burburbur"
+},
+{
+"name" :  "Gergerger",
+"price" : 0.5,
+"imageName" : "gergerger"
+},
+{
+"name" :  "Hambur",
+"price" : 2.5,
+"imageName" : "hambur"
+},
+{
+"name" :  "Burgerham",
+"price" : 3,
+"imageName" : "burgerham"
+},
+{
+"name" :  "Hamger",
+"price" : 0.3,
+"imageName" : "hamger"
+},
+{
+"name" :  "Gerburger",
+"price" : 3,
+"imageName" : "gerburger"
+},
+{
+"name" :  "u",
+"price" : 0.05,
+"imageName" : "u"
+},
+{
+"name" :  "uuuuuuuuuu",
+"price" : 0.5,
+"imageName" : "uuuuuuuuuu"
+},
+{
+"name" :  "ur",
+"price" : 1,
+"imageName" : "ur"
+},
+{
+"name" :  "geru",
+"price" : 0.15,
+"imageName" : "geru"
+}]
